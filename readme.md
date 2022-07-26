@@ -14,4 +14,5 @@ winget install Spotify.Spotify
 winget install Audacity.Audacity  
 
 ### Custom:  
-winget install https://raw.githubusercontent.com/Netvoktun/winget/main/manifests/d/dkVistunehf/dkVistunSetup/1.1.3/
+#### Need to download the manifest because it only works offline...
+https://raw.githubusercontent.com/Netvoktun/winget/main/manifests/d/dkVistunehf/dkVistunSetup/
