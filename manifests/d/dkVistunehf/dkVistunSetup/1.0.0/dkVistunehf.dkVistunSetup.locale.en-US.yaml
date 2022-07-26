@@ -1,0 +1,14 @@
+# Created using wingetcreate 1.0.4.0
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.1.0.schema.json
+
+PackageIdentifier: dkVistunehf.dkVistunSetup
+PackageVersion: 1.0.0
+PackageLocale: en-US
+Publisher: dkVistun ehf
+PackageName: dkVistun Setup
+License: MIT License
+Copyright: Copyright (C) 2018 dkVistun ehf
+ShortDescription: dkVistun Setup Installer
+ManifestType: defaultLocale
+ManifestVersion: 1.1.0
+
