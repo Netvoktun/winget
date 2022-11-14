@@ -16,3 +16,6 @@ winget install Audacity.Audacity
 ### Custom:  
 #### Need to download the manifest because it only works locally...
 https://raw.githubusercontent.com/Netvoktun/winget/main/manifests/d/dkVistunehf/dkVistunSetup/
+
+### Set Culture(Region stillingar)
+Set-Culture is-IS
