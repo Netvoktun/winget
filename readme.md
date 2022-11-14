@@ -13,9 +13,14 @@ winget install Jabra.Direct
 winget install Spotify.Spotify  
 winget install Audacity.Audacity  
 
+### Dell Tölvur:
+winget install Dell.CommandUpdate.Universal
+# Dell PowerManager
+winget install 9PD11RQ8QC9K
+
 ### Custom:  
 #### Need to download the manifest because it only works locally...
 https://raw.githubusercontent.com/Netvoktun/winget/main/manifests/d/dkVistunehf/dkVistunSetup/
 
-### Set Culture(Region stillingar)
+### Set Culture(Region stillingar):
 Set-Culture is-IS
