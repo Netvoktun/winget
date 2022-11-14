@@ -15,7 +15,7 @@ winget install Audacity.Audacity
 
 ### Dell Tölvur:
 winget install Dell.CommandUpdate.Universal
-# Dell PowerManager
+#### Dell PowerManager
 winget install 9PD11RQ8QC9K
 
 ### Custom:  
