@@ -1,6 +1,6 @@
 ### Essentials:  
 winget install 7zip.7zip --accept-package-agreements --accept-source-agreements  
-winget install Microsoft.Office 
+winget install Microsoft.Office  
 winget install Microsoft.Teams  
 winget install VideoLAN.VLC  
 winget install Google.Chrome  
