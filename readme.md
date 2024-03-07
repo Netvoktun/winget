@@ -31,4 +31,14 @@ Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses ("8.8.8.8
 ### Set the DNS servers for the WiFi interface:  
 Set-DnsClientServerAddress -InterfaceAlias "Wi-Fi" -ServerAddresses ("8.8.8.8", "8.8.4.4")
   
+### Backup/restore WiFi profiles from one computer to another:  
+#### Export:  
+cd c:\  
+mkdir wifi-profiles
+cd wifi-profiles
+netsh wlan export profile key=clear folder="C:\wifi-profiles"
 
+#### Import:  
+Get-ChildItem -Path .\*.xml | ForEach-Object { netsh wlan add profile filename=$_ user=current }
+  
+  
