@@ -21,10 +21,13 @@ winget install 9PD11RQ8QC9K
 ### Custom:  
 #### Need to download the manifest because it only works locally...
 https://raw.githubusercontent.com/Netvoktun/winget/main/manifests/d/dkVistunehf/dkVistunSetup/
-
+  
 ### Set Culture(Region stillingar):
 Set-Culture is-IS
-  
+
+### Sync Time(Date stillingar):
+Invoke-Command -ScriptBlock { Start-Service w32time; w32tm /resync }
+
 ### Set the DNS servers for the Ethernet interface:  
 Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses ("8.8.8.8", "8.8.4.4")
   
