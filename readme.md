@@ -1,22 +1,25 @@
 ### Essentials:  
 ```bash
 winget install Microsoft.Office
+
 ```
 ```bash
 winget install 7zip.7zip --accept-package-agreements --accept-source-agreements  
 winget install Microsoft.Teams  
 winget install VideoLAN.VLC  
 winget install Google.Chrome  
-winget install Adobe.Acrobat.Reader.64-bit  
+winget install Adobe.Acrobat.Reader.64-bit
+
 ```
 
 ### Optionals:  
 ```bash
-winget install BraveSoftware.BraveBrowser  
-winget install Famatech.AdvancedIPScanner  
-winget install Jabra.Direct  
-winget install Spotify.Spotify  
-winget install Audacity.Audacity  
+winget install BraveSoftware.BraveBrowser
+winget install Famatech.AdvancedIPScanner
+winget install Jabra.Direct
+winget install Spotify.Spotify
+winget install Audacity.Audacity
+
 ```
 
 ### Dell Tölvur:
@@ -31,6 +34,7 @@ https://raw.githubusercontent.com/Netvoktun/winget/main/manifests/d/dkVistunehf/
 ### Set Culture(Region stillingar):
 ```bash
 Set-Culture is-IS
+
 ```
 
 ### Sync Time(Date stillingar):
@@ -42,10 +46,13 @@ Invoke-Command -ScriptBlock { Start-Service w32time; w32tm /resync }
 ### Set the DNS servers for the Ethernet interface:  
 ```bash
 Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses ("8.8.8.8", "8.8.4.4")
+
 ```
 ### Set the DNS servers for the WiFi interface:  
 ```bash
 Set-DnsClientServerAddress -InterfaceAlias "Wi-Fi" -ServerAddresses ("8.8.8.8", "8.8.4.4")
+Set-DnsClientServerAddress -InterfaceAlias "WiFi" -ServerAddresses ("8.8.8.8", "8.8.4.4")
+
 ```
 ### Backup/restore WiFi profiles from one computer to another:  
 #### Export:  
