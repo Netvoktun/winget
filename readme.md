@@ -37,6 +37,7 @@ Set-Culture is-IS
 ```bash
 Invoke-Command -ScriptBlock { Start-Service w32time; w32tm /resync }
 Invoke-Command -ScriptBlock { Start-Service w32time; w32tm /resync }
+
 ```
 ### Set the DNS servers for the Ethernet interface:  
 ```bash
