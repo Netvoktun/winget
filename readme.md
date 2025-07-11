@@ -29,17 +29,22 @@ winget install 9PD11RQ8QC9K
 https://raw.githubusercontent.com/Netvoktun/winget/main/manifests/d/dkVistunehf/dkVistunSetup/
   
 ### Set Culture(Region stillingar):
+```bash
 Set-Culture is-IS
+```
 
 ### Sync Time(Date stillingar):
+```bash
 Invoke-Command -ScriptBlock { Start-Service w32time; w32tm /resync }
-
+```
 ### Set the DNS servers for the Ethernet interface:  
+```bash
 Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses ("8.8.8.8", "8.8.4.4")
-  
+```
 ### Set the DNS servers for the WiFi interface:  
+```bash
 Set-DnsClientServerAddress -InterfaceAlias "Wi-Fi" -ServerAddresses ("8.8.8.8", "8.8.4.4")
-  
+```
 ### Backup/restore WiFi profiles from one computer to another:  
 #### Export:  
 cd c:\  
