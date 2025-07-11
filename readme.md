@@ -1,17 +1,23 @@
 ### Essentials:  
+```bash
+winget install Microsoft.Office
+```
+```bash
 winget install 7zip.7zip --accept-package-agreements --accept-source-agreements  
-winget install Microsoft.Office  
 winget install Microsoft.Teams  
 winget install VideoLAN.VLC  
 winget install Google.Chrome  
 winget install Adobe.Acrobat.Reader.64-bit  
+```
 
 ### Optionals:  
+```bash
 winget install BraveSoftware.BraveBrowser  
 winget install Famatech.AdvancedIPScanner  
 winget install Jabra.Direct  
 winget install Spotify.Spotify  
 winget install Audacity.Audacity  
+```
 
 ### Dell Tölvur:
 winget install Dell.CommandUpdate.Universal
