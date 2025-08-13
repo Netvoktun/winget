@@ -65,3 +65,13 @@ netsh wlan export profile key=clear folder="C:\wifi-profiles"
 Get-ChildItem -Path .\*.xml | ForEach-Object { netsh wlan add profile filename=$_ user=current }
   
   
+# Disable "Learn about this picture" desktop icon but keep Spotlight
+```bash
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel" /v "{2cc5ca98-6485-489a-920e-b3e88a6ccce3}" /t REG_DWORD /d 1 /f
+RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters
+
+```
+
+```bash
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel" /v "{2cc5ca98-6485-489a-920e-b3e88a6ccce3}" /t REG_DWORD /d 0 /f
+```
