@@ -9,20 +9,7 @@ winget install Microsoft.OfficeDeploymentTool
 ```
 
 ```bash
-<Configuration>
-  <Add OfficeClientEdition="64" Channel="Current">
-    <Product ID="O365ProPlusRetail">
-      <Language ID="en-us" />
-      <Language ID="is-is" />
-    </Product>
-    <Product ID="VisioProRetail">
-      <Language ID="en-us" />
-    </Product>
-  </Add>
-  <Updates Enabled="TRUE" Channel="Current" />
-  <Display Level="None" AcceptEULA="TRUE" />
-  <Property Name="AUTOACTIVATE" Value="1" />
-</Configuration>
+Invoke-WebRequest "https://raw.githubusercontent.com/Netvoktun/winget/refs/heads/main/configuration-Office365-x64.xml" -OutFile (Join-Path $env:USERPROFILE "Downloads\configuration-Office365-x64.xml")
 
 ```
 
