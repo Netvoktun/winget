@@ -4,6 +4,30 @@ winget install Microsoft.Office
 
 ```
 ```bash
+winget install Microsoft.OfficeDeploymentTool
+
+```
+
+```bash
+<Configuration>
+  <Add OfficeClientEdition="64" Channel="Current">
+    <Product ID="O365ProPlusRetail">
+      <Language ID="en-us" />
+      <Language ID="is-is" />
+    </Product>
+    <Product ID="VisioProRetail">
+      <Language ID="en-us" />
+    </Product>
+  </Add>
+  <Updates Enabled="TRUE" Channel="Current" />
+  <Display Level="None" AcceptEULA="TRUE" />
+  <Property Name="AUTOACTIVATE" Value="1" />
+</Configuration>
+
+```
+
+
+```bash
 winget install 7zip.7zip --accept-package-agreements --accept-source-agreements  
 winget install Microsoft.Teams  
 winget install VideoLAN.VLC  
