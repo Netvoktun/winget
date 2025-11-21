@@ -26,6 +26,11 @@ winget install Microsoft.OfficeDeploymentTool
 
 ```
 
+```bash
+setup.exe /configure configuration-Office365-x64.xml
+
+```
+
 
 ```bash
 winget install 7zip.7zip --accept-package-agreements --accept-source-agreements  
