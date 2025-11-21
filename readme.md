@@ -14,7 +14,7 @@ Invoke-WebRequest "https://raw.githubusercontent.com/Netvoktun/winget/refs/heads
 ```
 
 ```bash
-setup.exe /configure configuration-Office365-x64.xml
+& "C:\Program Files (x86)\OfficeDeploymentTool\setup.exe" /configure "$env:USERPROFILE\Downloads\configuration-Office365-x64.xml"
 
 ```
 
