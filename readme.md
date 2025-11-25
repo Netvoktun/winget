@@ -3,17 +3,11 @@
 winget install Microsoft.Office
 
 ```
+eða
+
 ```bash
 winget install Microsoft.OfficeDeploymentTool
-
-```
-
-```bash
 Invoke-WebRequest "https://raw.githubusercontent.com/Netvoktun/winget/refs/heads/main/configuration-Office365-x64.xml" -OutFile (Join-Path $env:USERPROFILE "Downloads\configuration-Office365-x64.xml")
-
-```
-
-```bash
 & "C:\Program Files (x86)\OfficeDeploymentTool\setup.exe" /configure "$env:USERPROFILE\Downloads\configuration-Office365-x64.xml"
 
 ```
