@@ -101,6 +101,9 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcon
 
 ### Remove Microsoft packages:
 ```bash
+winget uninstall "Dell SupportAssist Remediation"
+winget uninstall "ARP\Machine\X64\{0307D6D7-56E0-408C-B8D9-D3C6AFEBDDB9}"
+winget uninstall "MSIX\Dell.SupportAssistforPCs_4.10.3.0_x64__18ctm2993j0dg"
 winget uninstall "Microsoft 365 - da-dk"
 winget uninstall "Microsoft 365 - fi-fi"
 winget uninstall "Microsoft 365 - nb-no"
