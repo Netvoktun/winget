@@ -1,53 +1,3 @@
-### Essentials:  
-```bash
-winget install Microsoft.Office
-
-```
-eða
-
-```bash
-winget install Microsoft.OfficeDeploymentTool
-Invoke-WebRequest "https://raw.githubusercontent.com/Netvoktun/winget/refs/heads/main/configuration-Office365-x64.xml" -OutFile (Join-Path $env:USERPROFILE "Downloads\configuration-Office365-x64.xml")
-& "C:\Program Files (x86)\OfficeDeploymentTool\setup.exe" /configure "$env:USERPROFILE\Downloads\configuration-Office365-x64.xml"
-
-```
-
-
-```bash
-winget install 7zip.7zip --accept-package-agreements --accept-source-agreements  
-winget install Microsoft.Teams  
-winget install VideoLAN.VLC  
-winget install Google.Chrome  
-winget install Adobe.Acrobat.Reader.64-bit
-
-```
-
-### Optionals:  
-```bash
-winget install BraveSoftware.BraveBrowser
-winget install Famatech.AdvancedIPScanner
-winget install Jabra.Direct
-winget install Spotify.Spotify
-winget install Audacity.Audacity
-
-```
-
-### Dell Tölvur:
-```bash
-winget install Dell.CommandUpdate.Universal
-
-```
-
-#### Dell PowerManager
-```bash
-winget install 9PD11RQ8QC9K
-
-```
-
-### Custom:  
-#### Need to download the manifest because it only works locally...
-https://raw.githubusercontent.com/Netvoktun/winget/main/manifests/d/dkVistunehf/dkVistunSetup/
-  
 ### Set Culture(Region stillingar):
 ```bash
 Set-Culture is-IS
@@ -71,6 +21,69 @@ Set-DnsClientServerAddress -InterfaceAlias "Wi-Fi" -ServerAddresses ("8.8.8.8", 
 Set-DnsClientServerAddress -InterfaceAlias "WiFi" -ServerAddresses ("8.8.8.8", "8.8.4.4")
 
 ```
+
+### Essentials:  
+```bash
+winget install Microsoft.Office
+
+```
+eða
+
+```bash
+winget install Microsoft.OfficeDeploymentTool
+Invoke-WebRequest "https://raw.githubusercontent.com/Netvoktun/winget/refs/heads/main/configuration-Office365-x64.xml" -OutFile (Join-Path $env:USERPROFILE "Downloads\configuration-Office365-x64.xml")
+& "C:\Program Files (x86)\OfficeDeploymentTool\setup.exe" /configure "$env:USERPROFILE\Downloads\configuration-Office365-x64.xml"
+
+```
+
+```bash
+winget install 7zip.7zip --accept-package-agreements --accept-source-agreements  
+winget install Microsoft.Teams  
+winget install VideoLAN.VLC  
+winget install Google.Chrome  
+winget install Adobe.Acrobat.Reader.64-bit
+
+```
+
+### Optionals:  
+```bash
+winget install BraveSoftware.BraveBrowser
+winget install Famatech.AdvancedIPScanner
+winget install Jabra.Direct
+winget install Spotify.Spotify
+winget install Audacity.Audacity
+
+```
+
+### Dell Computers:
+```bash
+winget install Dell.CommandUpdate.Universal
+
+```
+
+### Remove Microsoft packages:
+```bash
+winget uninstall "Dell SupportAssist Remediation"
+winget uninstall "ARP\Machine\X64\{0307D6D7-56E0-408C-B8D9-D3C6AFEBDDB9}"
+winget uninstall "MSIX\Dell.SupportAssistforPCs_4.10.3.0_x64__18ctm2993j0dg"
+winget uninstall "Microsoft 365 - da-dk"
+winget uninstall "Microsoft 365 - fi-fi"
+winget uninstall "Microsoft 365 - nb-no"
+winget uninstall "Microsoft 365 - sv-se"
+winget uninstall "Microsoft 365 - en-us"
+winget uninstall "Microsoft OneNote - da-dk"
+winget uninstall "Microsoft OneNote - fi-fi"
+winget uninstall "Microsoft OneNote - nb-no"
+winget uninstall "Microsoft OneNote - sv-se"
+winget uninstall "Microsoft OneNote - en-us"
+
+```
+
+### Custom:  
+#### Need to download the manifest because it only works locally...
+https://raw.githubusercontent.com/Netvoktun/winget/main/manifests/d/dkVistunehf/dkVistunSetup/
+  
+
 ### Backup/restore WiFi profiles from one computer to another:  
 #### Export:  
 cd c:\  
@@ -91,22 +104,4 @@ RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters
 
 ```bash
 reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel" /v "{2cc5ca98-6485-489a-920e-b3e88a6ccce3}" /t REG_DWORD /d 0 /f
-```
-
-### Remove Microsoft packages:
-```bash
-winget uninstall "Dell SupportAssist Remediation"
-winget uninstall "ARP\Machine\X64\{0307D6D7-56E0-408C-B8D9-D3C6AFEBDDB9}"
-winget uninstall "MSIX\Dell.SupportAssistforPCs_4.10.3.0_x64__18ctm2993j0dg"
-winget uninstall "Microsoft 365 - da-dk"
-winget uninstall "Microsoft 365 - fi-fi"
-winget uninstall "Microsoft 365 - nb-no"
-winget uninstall "Microsoft 365 - sv-se"
-winget uninstall "Microsoft 365 - en-us"
-winget uninstall "Microsoft OneNote - da-dk"
-winget uninstall "Microsoft OneNote - fi-fi"
-winget uninstall "Microsoft OneNote - nb-no"
-winget uninstall "Microsoft OneNote - sv-se"
-winget uninstall "Microsoft OneNote - en-us"
-
 ```
