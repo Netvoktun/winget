@@ -63,21 +63,11 @@ winget install Dell.CommandUpdate.Universal
 
 ```
 
-### Remove Microsoft packages:
+### Remove packages:
 ```bash
 winget uninstall "Dell SupportAssist Remediation"
 winget uninstall "ARP\Machine\X64\{0307D6D7-56E0-408C-B8D9-D3C6AFEBDDB9}"
 winget uninstall "MSIX\Dell.SupportAssistforPCs_4.10.3.0_x64__18ctm2993j0dg"
-winget uninstall "Microsoft 365 - da-dk"
-winget uninstall "Microsoft 365 - fi-fi"
-winget uninstall "Microsoft 365 - nb-no"
-winget uninstall "Microsoft 365 - sv-se"
-winget uninstall "Microsoft 365 - en-us"
-winget uninstall "Microsoft OneNote - da-dk"
-winget uninstall "Microsoft OneNote - fi-fi"
-winget uninstall "Microsoft OneNote - nb-no"
-winget uninstall "Microsoft OneNote - sv-se"
-winget uninstall "Microsoft OneNote - en-us"
 
 ```
 
