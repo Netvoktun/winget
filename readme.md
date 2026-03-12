@@ -22,79 +22,6 @@ Set-DnsClientServerAddress -InterfaceAlias "WiFi" -ServerAddresses ("8.8.8.8", "
 
 ```
 
-### Essentials:  
-```bash
-winget install Microsoft.Office
-
-```
-eða
-
-```bash
-winget install Microsoft.OfficeDeploymentTool
-Invoke-WebRequest "https://raw.githubusercontent.com/Netvoktun/winget/refs/heads/main/configuration-Office365-uninstall.xml" -OutFile (Join-Path $env:USERPROFILE "Downloads\configuration-Office365-uninstall.xml")
-Invoke-WebRequest "https://raw.githubusercontent.com/Netvoktun/winget/refs/heads/main/configuration-Office365-x64.xml" -OutFile (Join-Path $env:USERPROFILE "Downloads\configuration-Office365-x64.xml")
-& "C:\Program Files (x86)\OfficeDeploymentTool\setup.exe" /configure "$env:USERPROFILE\Downloads\configuration-Office365-uninstall.xml"
-& "C:\Program Files (x86)\OfficeDeploymentTool\setup.exe" /configure "$env:USERPROFILE\Downloads\configuration-Office365-x64.xml"
-
-```
-
-```bash
-winget install 7zip.7zip --accept-package-agreements --accept-source-agreements  
-winget install Microsoft.Teams  
-winget install VideoLAN.VLC  
-winget install Google.Chrome  
-winget install Adobe.Acrobat.Reader.64-bit
-
-```
-### Run Dell Command Update
-```bash
-& "C:\Program Files\Dell\CommandUpdate\dcu-cli.exe" /scan
-& "C:\Program Files\Dell\CommandUpdate\dcu-cli.exe" /applyUpdates -reboot=disable
-
-```
-
-### Trigger Windows Update:
-```bash
-### Enable advanced Windows Update options:
-$WUPath = "HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings"
-Set-ItemProperty -Path $WUPath -Name "AllowMUUpdateService" -Value 1 -Type DWord
-Set-ItemProperty -Path $WUPath -Name "IsExpedited" -Value 1 -Type DWord
-Set-ItemProperty -Path $WUPath -Name "AllowAutoWindowsUpdateDownloadOverMeteredNetwork" -Value 1 -Type DWord
-Set-ItemProperty -Path $WUPath -Name "RestartNotificationsAllowed2" -Value 1 -Type DWord
-
-Install-Module PSWindowsUpdate -Force -SkipPublisherCheck
-Get-WindowsUpdate -AcceptAll -Install -WithOptional -AutoReboot
-### Set Balanced power plan (avoids fan noise from High Performance):
-powercfg /setactive 381b4222-f694-41f0-9685-ff5bb260df2e
-
-### Install Icelandic language pack:
-Install-Language is-IS
-Set-WinUserLanguageList -LanguageList is-IS, en-US -Force
-### Keep Windows display language as English:
-Set-WinUILanguageOverride -Language en-US
-Set-WinSystemLocale -SystemLocale is-IS
-Set-Culture is-IS
-
-### Update all MS Store apps:
-Get-CimInstance -Namespace root\cimv2\mdm\dmmap -ClassName MDM_EnterpriseModernAppManagement_AppManagement01 | Invoke-CimMethod -MethodName UpdateScanMethod
-
-```
-
-### Optionals:  
-```bash
-winget install BraveSoftware.BraveBrowser
-winget install Famatech.AdvancedIPScanner
-winget install Jabra.Direct
-winget install Spotify.Spotify
-winget install Audacity.Audacity
-
-```
-
-### Dell Computers:
-```bash
-winget install Dell.CommandUpdate.Universal
-
-```
 
 ### Remove bloatware packages:
 ```bash
@@ -139,6 +66,84 @@ Get-AppxPackage Microsoft.Windows.DevHome | Remove-AppxPackage
 Get-AppxPackage Microsoft.Clipchamp | Remove-AppxPackage
 
 ```
+
+
+### Trigger Windows Update:
+```bash
+### Enable advanced Windows Update options:
+$WUPath = "HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings"
+Set-ItemProperty -Path $WUPath -Name "AllowMUUpdateService" -Value 1 -Type DWord
+Set-ItemProperty -Path $WUPath -Name "IsExpedited" -Value 1 -Type DWord
+Set-ItemProperty -Path $WUPath -Name "AllowAutoWindowsUpdateDownloadOverMeteredNetwork" -Value 1 -Type DWord
+Set-ItemProperty -Path $WUPath -Name "RestartNotificationsAllowed2" -Value 1 -Type DWord
+
+Install-Module PSWindowsUpdate -Force -SkipPublisherCheck
+Get-WindowsUpdate -AcceptAll -Install -WithOptional -AutoReboot
+### Set Balanced power plan (avoids fan noise from High Performance):
+powercfg /setactive 381b4222-f694-41f0-9685-ff5bb260df2e
+
+### Install Icelandic language pack:
+Install-Language is-IS
+Set-WinUserLanguageList -LanguageList is-IS, en-US -Force
+### Keep Windows display language as English:
+Set-WinUILanguageOverride -Language en-US
+Set-WinSystemLocale -SystemLocale is-IS
+Set-Culture is-IS
+
+### Update all MS Store apps:
+Get-CimInstance -Namespace root\cimv2\mdm\dmmap -ClassName MDM_EnterpriseModernAppManagement_AppManagement01 | Invoke-CimMethod -MethodName UpdateScanMethod
+
+```
+
+### Run Dell Command Update
+```bash
+& "C:\Program Files\Dell\CommandUpdate\dcu-cli.exe" /scan
+& "C:\Program Files\Dell\CommandUpdate\dcu-cli.exe" /applyUpdates -reboot=disable
+
+```
+
+### Essentials:  
+```bash
+winget install Microsoft.Office
+
+```
+eða
+
+```bash
+winget install Microsoft.OfficeDeploymentTool
+Invoke-WebRequest "https://raw.githubusercontent.com/Netvoktun/winget/refs/heads/main/configuration-Office365-uninstall.xml" -OutFile (Join-Path $env:USERPROFILE "Downloads\configuration-Office365-uninstall.xml")
+Invoke-WebRequest "https://raw.githubusercontent.com/Netvoktun/winget/refs/heads/main/configuration-Office365-x64.xml" -OutFile (Join-Path $env:USERPROFILE "Downloads\configuration-Office365-x64.xml")
+& "C:\Program Files (x86)\OfficeDeploymentTool\setup.exe" /configure "$env:USERPROFILE\Downloads\configuration-Office365-uninstall.xml"
+& "C:\Program Files (x86)\OfficeDeploymentTool\setup.exe" /configure "$env:USERPROFILE\Downloads\configuration-Office365-x64.xml"
+
+```
+
+```bash
+winget install 7zip.7zip --accept-package-agreements --accept-source-agreements  
+winget install Microsoft.Teams  
+winget install VideoLAN.VLC  
+winget install Google.Chrome  
+winget install Adobe.Acrobat.Reader.64-bit
+
+```
+
+
+### Optionals:  
+```bash
+winget install BraveSoftware.BraveBrowser
+winget install Famatech.AdvancedIPScanner
+winget install Jabra.Direct
+winget install Spotify.Spotify
+winget install Audacity.Audacity
+
+```
+
+### Dell Computers:
+```bash
+winget install Dell.CommandUpdate.Universal
+
+```
+
 
 ### Custom:  
 #### Need to download the manifest because it only works locally...
