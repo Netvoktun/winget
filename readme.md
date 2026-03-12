@@ -87,6 +87,24 @@ winget uninstall "Microsoft Family"
 winget uninstall "Dev Home (Preview)"
 winget uninstall "Símatengill"
 
+Get-AppxPackage Microsoft.GamingApp | Remove-AppxPackage
+Get-AppxPackage Microsoft.XboxGamingOverlay | Remove-AppxPackage
+Get-AppxPackage Microsoft.Xbox.TCUI | Remove-AppxPackage
+Get-AppxPackage Microsoft.XboxIdentityProvider | Remove-AppxPackage
+Get-AppxPackage Microsoft.XboxSpeechToTextOverlay | Remove-AppxPackage
+Get-AppxPackage Microsoft.MicrosoftSolitaireCollection | Remove-AppxPackage
+
+Get-AppxPackage Microsoft.BingNews | Remove-AppxPackage
+Get-AppxPackage Microsoft.BingSearch | Remove-AppxPackage
+Get-AppxPackage Microsoft.BingWeather | Remove-AppxPackage
+Get-AppxPackage Microsoft.ZuneMusic | Remove-AppxPackage
+Get-AppxPackage Microsoft.WindowsFeedbackHub | Remove-AppxPackage
+Get-AppxPackage Microsoft.GetHelp | Remove-AppxPackage
+Get-AppxPackage MicrosoftCorporationII.MicrosoftFamily | Remove-AppxPackage
+Get-AppxPackage Microsoft.YourPhone | Remove-AppxPackage
+Get-AppxPackage Microsoft.Windows.DevHome | Remove-AppxPackage
+Get-AppxPackage Microsoft.Clipchamp | Remove-AppxPackage
+
 ```
 
 ### Custom:  
