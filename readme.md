@@ -71,7 +71,6 @@ winget uninstall "ARP\Machine\X64\{19A9EDD8-0C4D-4CF4-B0EA-D110407DF54B}"
 winget uninstall "MSIX\Dell.SupportAssistforPCs_5.0.1.0_x64__18ctm2993j0dg"
 winget uninstall "Dell SupportAssist OS Recovery Plugin for Dell Update"
 winget uninstall "Dell Pair"
-winget uninstall Dell.CommandUpdate.Universal
 
 winget uninstall "Xbox"
 winget uninstall "Game Bar"
