@@ -46,6 +46,21 @@ winget install Google.Chrome
 winget install Adobe.Acrobat.Reader.64-bit
 
 ```
+### Run Dell Command Update
+```bash
+& "C:\Program Files\Dell\CommandUpdate\dcu-cli.exe" /scan
+& "C:\Program Files\Dell\CommandUpdate\dcu-cli.exe" /applyUpdates -reboot=disable
+
+```
+
+### Trigger Windows Update:
+```bash
+Install-Module PSWindowsUpdate -Force -SkipPublisherCheck
+Get-WindowsUpdate -AcceptAll -Install -AutoReboot
+### Set Balanced power plan (avoids fan noise from High Performance):
+powercfg /setactive 381b4222-f694-41f0-9685-ff5bb260df2e
+
+```
 
 ### Optionals:  
 ```bash
