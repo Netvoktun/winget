@@ -55,10 +55,28 @@ winget install Adobe.Acrobat.Reader.64-bit
 
 ### Trigger Windows Update:
 ```bash
+### Enable advanced Windows Update options:
+$WUPath = "HKLM:\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings"
+Set-ItemProperty -Path $WUPath -Name "AllowMUUpdateService" -Value 1 -Type DWord
+Set-ItemProperty -Path $WUPath -Name "IsExpedited" -Value 1 -Type DWord
+Set-ItemProperty -Path $WUPath -Name "AllowAutoWindowsUpdateDownloadOverMeteredNetwork" -Value 1 -Type DWord
+Set-ItemProperty -Path $WUPath -Name "RestartNotificationsAllowed2" -Value 1 -Type DWord
+
 Install-Module PSWindowsUpdate -Force -SkipPublisherCheck
-Get-WindowsUpdate -AcceptAll -Install -AutoReboot
+Get-WindowsUpdate -AcceptAll -Install -WithOptional -AutoReboot
 ### Set Balanced power plan (avoids fan noise from High Performance):
 powercfg /setactive 381b4222-f694-41f0-9685-ff5bb260df2e
+
+### Install Icelandic language pack:
+Install-Language is-IS
+Set-WinUserLanguageList -LanguageList is-IS, en-US -Force
+### Keep Windows display language as English:
+Set-WinUILanguageOverride -Language en-US
+Set-WinSystemLocale -SystemLocale is-IS
+Set-Culture is-IS
+
+### Update all MS Store apps:
+Get-CimInstance -Namespace root\cimv2\mdm\dmmap -ClassName MDM_EnterpriseModernAppManagement_AppManagement01 | Invoke-CimMethod -MethodName UpdateScanMethod
 
 ```
 
