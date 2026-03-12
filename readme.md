@@ -63,11 +63,30 @@ winget install Dell.CommandUpdate.Universal
 
 ```
 
-### Remove packages:
+### Remove bloatware packages:
 ```bash
 winget uninstall "Dell SupportAssist Remediation"
-winget uninstall "ARP\Machine\X64\{0307D6D7-56E0-408C-B8D9-D3C6AFEBDDB9}"
-winget uninstall "MSIX\Dell.SupportAssistforPCs_4.10.3.0_x64__18ctm2993j0dg"
+winget uninstall "Dell SupportAssist"
+winget uninstall "ARP\Machine\X64\{19A9EDD8-0C4D-4CF4-B0EA-D110407DF54B}"
+winget uninstall "MSIX\Dell.SupportAssistforPCs_5.0.1.0_x64__18ctm2993j0dg"
+winget uninstall "Dell SupportAssist OS Recovery Plugin for Dell Update"
+winget uninstall "Dell Pair"
+winget uninstall Dell.CommandUpdate.Universal
+
+winget uninstall "Xbox"
+winget uninstall "Game Bar"
+winget uninstall "Xbox TCUI"
+winget uninstall "Xbox Identity Provider"
+winget uninstall "Game Speech Window"
+winget uninstall "Solitaire & Casual Games"
+
+winget uninstall "News"
+winget uninstall "Microsoft Bing"
+winget uninstall "MSN-veður"
+winget uninstall "Microsoft Clipchamp"
+winget uninstall "Microsoft Family"
+winget uninstall "Dev Home (Preview)"
+winget uninstall "Símatengill"
 
 ```
 
