@@ -135,6 +135,7 @@ winget install Adobe.Acrobat.Reader.64-bit
 winget install BraveSoftware.BraveBrowser
 winget install Famatech.AdvancedIPScanner
 winget install Jabra.Direct
+winget install 3CX.SoftPhone
 winget install Spotify.Spotify
 winget install Audacity.Audacity
 
