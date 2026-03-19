@@ -30,25 +30,12 @@ New-LocalUser -Name "Nemandi" -NoPassword -FullName "Nemandi" -Description "Stan
 Add-LocalGroupMember -Group "Users" -Member "Nemandi"
 
 #Lenovo bloatware:
-winget uninstall "McAfee LiveSafe"
-winget uninstall "McAfee Personal Security"
-winget uninstall "McAfee WebAdvisor"
-winget uninstall "Lenovo Vantage"
+winget uninstall "McAfee" --id McAfee.wps
 winget uninstall "Lenovo Vantage Service"
-winget uninstall "LenovoUtility"
 winget uninstall "Lenovo Now"
-winget uninstall "Lenovo Smart Appearance"
-winget uninstall "Lenovo Smart Meeting"
-winget uninstall "Lenovo Quick Clean"
-winget uninstall "Lenovo System Update"
-winget uninstall "Lenovo App Explorer"
-winget uninstall "Lenovo Migration Assistant"
-winget uninstall "Lenovo Voice"
 
+Get-AppxPackage *LenovoCompanion* | Remove-AppxPackage
 Get-AppxPackage *McAfee* | Remove-AppxPackage
-Get-AppxPackage *LenovoUtility* | Remove-AppxPackage
-Get-AppxPackage *LenovoVantage* | Remove-AppxPackage
-Get-AppxPackage *LenovoNow* | Remove-AppxPackage
 
 ```
 
