@@ -94,8 +94,8 @@ Set-ItemProperty -Path $WUPath -Name "AllowAutoWindowsUpdateDownloadOverMeteredN
 Set-ItemProperty -Path $WUPath -Name "RestartNotificationsAllowed2" -Value 1 -Type DWord
 
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
-Import-Module PSWindowsUpdate -Force -Verbose
 Install-Module PSWindowsUpdate -Force -SkipPublisherCheck
+Import-Module PSWindowsUpdate -Force -Verbose
 Get-WindowsUpdate -MicrosoftUpdate -AcceptAll -Install -IgnoreReboot -RecurseCycle 3 -Verbose
 ### Set Balanced power plan (avoids fan noise from High Performance):
 powercfg /setactive 381b4222-f694-41f0-9685-ff5bb260df2e
