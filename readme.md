@@ -31,7 +31,6 @@ Add-LocalGroupMember -Group "Users" -Member "Nemandi"
 
 #Lenovo bloatware:
 winget uninstall "McAfee" --id McAfee.wps
-winget uninstall "Lenovo Vantage Service"
 winget uninstall "Lenovo Now"
 
 Get-AppxPackage *LenovoCompanion* | Remove-AppxPackage
