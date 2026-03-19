@@ -1,3 +1,5 @@
+
+
 ### Set Culture(Region stillingar):
 ```bash
 Set-Culture is-IS
@@ -19,6 +21,34 @@ Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses ("8.8.8.8
 ```bash
 Set-DnsClientServerAddress -InterfaceAlias "Wi-Fi" -ServerAddresses ("8.8.8.8", "8.8.4.4")
 Set-DnsClientServerAddress -InterfaceAlias "WiFi" -ServerAddresses ("8.8.8.8", "8.8.4.4")
+
+```
+
+### Set the DNS servers for the WiFi interface:  
+```bash
+New-LocalUser -Name "Nemandi" -NoPassword -FullName "Nemandi" -Description "Standard notandi"
+Add-LocalGroupMember -Group "Users" -Member "Nemandi"
+
+#Lenovo bloatware:
+winget uninstall "McAfee LiveSafe"
+winget uninstall "McAfee Personal Security"
+winget uninstall "McAfee WebAdvisor"
+winget uninstall "Lenovo Vantage"
+winget uninstall "Lenovo Vantage Service"
+winget uninstall "LenovoUtility"
+winget uninstall "Lenovo Now"
+winget uninstall "Lenovo Smart Appearance"
+winget uninstall "Lenovo Smart Meeting"
+winget uninstall "Lenovo Quick Clean"
+winget uninstall "Lenovo System Update"
+winget uninstall "Lenovo App Explorer"
+winget uninstall "Lenovo Migration Assistant"
+winget uninstall "Lenovo Voice"
+
+Get-AppxPackage *McAfee* | Remove-AppxPackage
+Get-AppxPackage *LenovoUtility* | Remove-AppxPackage
+Get-AppxPackage *LenovoVantage* | Remove-AppxPackage
+Get-AppxPackage *LenovoNow* | Remove-AppxPackage
 
 ```
 
@@ -128,7 +158,11 @@ winget install Google.Chrome
 winget install Adobe.Acrobat.Reader.64-bit
 
 ```
-
+### set password
+```bash
+$password = ConvertTo-SecureString "Suri.0einn" -AsPlainText -Force
+Set-LocalUser -Name $env:USERNAME -Password $password
+```
 
 ### Optionals:  
 ```bash
