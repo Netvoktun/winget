@@ -128,6 +128,10 @@ eða
 
 ### Clean out Office, and Install it fresh...
 ```bash
+winget install Microsoft.OfficeDeploymentTool
+Invoke-WebRequest "https://raw.githubusercontent.com/Netvoktun/winget/refs/heads/main/configuration-Office365-uninstall.xml" -OutFile (Join-Path $env:USERPROFILE "Downloads\configuration-Office365-uninstall.xml")
+Invoke-WebRequest "https://raw.githubusercontent.com/Netvoktun/winget/refs/heads/main/configuration-Office365-x64.xml" -OutFile (Join-Path $env:USERPROFILE "Downloads\configuration-Office365-x64.xml")
+
 # Find setup.exe regardless of install location
 $odtPaths = @(
     "C:\Program Files (x86)\OfficeDeploymentTool\setup.exe",
