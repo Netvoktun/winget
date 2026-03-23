@@ -24,17 +24,10 @@ Set-DnsClientServerAddress -InterfaceAlias "WiFi" -ServerAddresses ("8.8.8.8", "
 
 ```
 
-### Set the DNS servers for the WiFi interface:  
+### Create a User... Non-administrative...
 ```bash
 New-LocalUser -Name "Nemandi" -NoPassword -FullName "Nemandi" -Description "Standard notandi"
 Add-LocalGroupMember -Group "Users" -Member "Nemandi"
-
-#Lenovo bloatware:
-winget uninstall "McAfee" --id McAfee.wps
-winget uninstall "Lenovo Now"
-
-Get-AppxPackage *LenovoCompanion* | Remove-AppxPackage
-Get-AppxPackage *McAfee* | Remove-AppxPackage
 
 ```
 
@@ -80,6 +73,12 @@ Get-AppxPackage MicrosoftCorporationII.MicrosoftFamily | Remove-AppxPackage
 Get-AppxPackage Microsoft.YourPhone | Remove-AppxPackage
 Get-AppxPackage Microsoft.Windows.DevHome | Remove-AppxPackage
 Get-AppxPackage Microsoft.Clipchamp | Remove-AppxPackage
+
+#Lenovo bloatware:
+winget uninstall "McAfee" --id McAfee.wps
+winget uninstall "Lenovo Now"
+Get-AppxPackage *LenovoCompanion* | Remove-AppxPackage
+Get-AppxPackage *McAfee* | Remove-AppxPackage
 
 ```
 
@@ -142,11 +141,12 @@ winget install Microsoft.Teams
 winget install VideoLAN.VLC  
 winget install Google.Chrome  
 winget install Adobe.Acrobat.Reader.64-bit
+winget upgrade --all
 
 ```
-### set password
+### set password to current user
 ```bash
-$password = ConvertTo-SecureString "Suri.0einn" -AsPlainText -Force
+$password = ConvertTo-SecureString "Something123" -AsPlainText -Force
 Set-LocalUser -Name $env:USERNAME -Password $password
 ```
 
