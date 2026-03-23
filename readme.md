@@ -126,12 +126,26 @@ winget install Microsoft.Office
 ```
 eða
 
+### Clean out Office, and Install it fresh...
 ```bash
-winget install Microsoft.OfficeDeploymentTool
-Invoke-WebRequest "https://raw.githubusercontent.com/Netvoktun/winget/refs/heads/main/configuration-Office365-uninstall.xml" -OutFile (Join-Path $env:USERPROFILE "Downloads\configuration-Office365-uninstall.xml")
-Invoke-WebRequest "https://raw.githubusercontent.com/Netvoktun/winget/refs/heads/main/configuration-Office365-x64.xml" -OutFile (Join-Path $env:USERPROFILE "Downloads\configuration-Office365-x64.xml")
-& "C:\Program Files (x86)\OfficeDeploymentTool\setup.exe" /configure "$env:USERPROFILE\Downloads\configuration-Office365-uninstall.xml"
-& "C:\Program Files (x86)\OfficeDeploymentTool\setup.exe" /configure "$env:USERPROFILE\Downloads\configuration-Office365-x64.xml"
+# Find setup.exe regardless of install location
+$odtPaths = @(
+    "C:\Program Files (x86)\OfficeDeploymentTool\setup.exe",
+    "C:\Program Files\OfficeDeploymentTool\setup.exe"
+)
+
+$odtSetup = $odtPaths | Where-Object { Test-Path $_ } | Select-Object -First 1
+
+if (-not $odtSetup) {
+    Write-Error "Office Deployment Tool not found! Make sure it's installed."
+    exit 1
+}
+
+Write-Host "Found ODT at: $odtSetup"
+
+# Then use $odtSetup instead of the hardcoded path
+& $odtSetup /configure "$env:USERPROFILE\Downloads\configuration-Office365-uninstall.xml"
+& $odtSetup /configure "$env:USERPROFILE\Downloads\configuration-Office365-x64.xml"
 
 ```
 
