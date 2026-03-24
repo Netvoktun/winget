@@ -159,6 +159,7 @@ winget install Microsoft.Teams
 winget install VideoLAN.VLC  
 winget install Google.Chrome  
 winget install Adobe.Acrobat.Reader.64-bit
+winget install "Microsoft 365 Copilot"
 winget upgrade --all
 
 ```
