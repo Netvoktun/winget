@@ -8,6 +8,7 @@
         <App type="win32" name="Word"  exe="C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE" />
         <App type="win32" name="Excel" exe="C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE" />
         <App type="uwp" name="Microsoft Teams"         aumid="MSTeams_8wekyb3d8bbwe!MSTeams" />
+        <App type="uwp" name="Microsoft To Do"         aumid="Microsoft.Todos_8wekyb3d8bbwe!App" />
     </Pin>
 
     <Unpin>
