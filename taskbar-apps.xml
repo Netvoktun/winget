@@ -3,11 +3,10 @@
 <TaskbarConfig>
 
     <Pin>
-        <!-- Win32 apps -->
+
         <App type="win32" name="Word"  exe="C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE" />
         <App type="win32" name="Excel" exe="C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE" />
 
-        <!-- UWP / Store apps -->
         <App type="uwp" name="Outlook (New)"          aumid="Microsoft.OutlookForWindows_8wekyb3d8bbwe!Microsoft.OutlookForWindows" />
         <App type="uwp" name="Microsoft Teams"         aumid="MSTeams_8wekyb3d8bbwe!MSTeams" />
         <App type="uwp" name="Microsoft 365 Copilot"   aumid="Microsoft.Copilot_8wekyb3d8bbwe!App" />
