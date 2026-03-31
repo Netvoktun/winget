@@ -163,6 +163,13 @@ winget install "Microsoft 365 Copilot"
 winget upgrade --all
 
 ```
+
+### Set Taskbar
+```bash
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Netvoktun/winget/refs/heads/main/Install-TaskbarPins.ps1" -UseBasicParsing | Select-Object -ExpandProperty Content | Out-File "$env:TEMP\Install-TaskbarPins.ps1"; & "$env:TEMP\Install-TaskbarPins.ps1" -ConfigUrl "https://raw.githubusercontent.com/Netvoktun/winget/refs/heads/main/taskbar-apps.xml"
+
+```
+
 ### set password to current user
 ```bash
 $password = ConvertTo-SecureString "Something123" -AsPlainText -Force
