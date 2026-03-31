@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-    Pin/Unpin config for Install-TaskbarPins.ps1
-    
-    Two types of Pin entries:
-      type="win32"  -- Classic desktop app. Provide the .exe path; the script creates the .lnk.
-      type="uwp"    -- Microsoft Store / UWP app. Provide the AppUserModelID (AUMID).
 
-    Unpin entries:
-      Provide the display name exactly as it appears on the taskbar.
--->
 <TaskbarConfig>
 
     <Pin>
