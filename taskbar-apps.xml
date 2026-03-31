@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Host this file on GitHub (e.g. in a repo's raw URL).
+    The PowerShell script downloads this, creates shortcuts, and pins them.
+
+    Each <App> entry:
+      name  = label shown on taskbar / shortcut name
+      path  = full path to the .exe on the target machine
+-->
+<TaskbarApps>
+    <App name="Notepad"    path="C:\Windows\System32\notepad.exe" />
+    <App name="Calculator" path="C:\Windows\System32\calc.exe" />
+    <!-- Add more apps here -->
+</TaskbarApps>
