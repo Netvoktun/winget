@@ -114,10 +114,12 @@ Get-CimInstance -Namespace root\cimv2\mdm\dmmap -ClassName MDM_EnterpriseModernA
 
 ### Run Dell Command Update
 ```bash
-& "C:\Program Files\Dell\CommandUpdate\dcu-cli.exe" /scan
-& "C:\Program Files\Dell\CommandUpdate\dcu-cli.exe" /applyUpdates -reboot=disable
+& "C:\Program Files\Dell\CommandUpdate\dcu-cli.exe" /scan -updateType=bios,firmware,driver
+& "C:\Program Files\Dell\CommandUpdate\dcu-cli.exe" /applyUpdates -silent -reboot=disable -updateType=bios,firmware,driver
 
 ```
+& "C:\Program Files\Dell\CommandUpdate\dcu-cli.exe" /scan
+& "C:\Program Files\Dell\CommandUpdate\dcu-cli.exe" /applyUpdates -reboot=disable
 
 ### Essentials:  
 ```bash
